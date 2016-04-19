@@ -1,4 +1,4 @@
-require '01_arrays_and_hashes'
+require 'arrays_and_hashes'
 
 describe Array do
 
