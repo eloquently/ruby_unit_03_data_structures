@@ -1,0 +1,2 @@
+class LinkedNode
+end
