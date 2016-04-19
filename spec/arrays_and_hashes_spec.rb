@@ -6,7 +6,7 @@ describe Array do
 
     describe '#my_each' do
         it 'outputs each element' do
-            expect { array.my_each { |a| print "#{a}-" } }.to output('1-2-3-4-5-').to_stdout
+            expect { array.my_each { |a| print "#{a}" } }.to output('12345').to_stdout
         end
     end
 end
