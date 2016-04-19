@@ -121,5 +121,14 @@ describe 'Interview Questions' do
             expect(list_has_cycle?(ll_start)).to be(false)
         end
     end
+
+
+    # Bonus question (optional)
+    # We implemented a deep_dup method on the array class
+    # However, the method that we implemented was not very deep --
+    # it only made a deep duplicate of 2D arrays. It would not
+    # work properly on a 3D arrays or higher.
+    # Write a recursive deep_dup function that works on all
+    # levels of the array (and write the tests for it)
 end
 
