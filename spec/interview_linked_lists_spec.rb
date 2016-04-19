@@ -18,7 +18,7 @@ describe 'LinkedNode' do
     end
 
     it 'has a next element' do
-        expect(ll_1.next_element).to eq(next_element)
+        expect(ll_1.next_element).to eq(ll_2)
     end
 
 end
