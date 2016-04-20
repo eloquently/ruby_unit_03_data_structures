@@ -6,7 +6,10 @@ require 'interview_linked_list'
 #   2) a reference to the next item in the list
 
 # Linked lists are not used in practice, but they are a popular target of
-# interview questions
+# interview questions.
+
+# Work through this file implementing the methods from top to bottom.
+# You can re-use methods that you have already implemented.
 
 describe 'LinkedNode' do
 
@@ -110,17 +113,24 @@ describe 'Interview Questions' do
     # given the starting element of a list
 
     let(:cycle_start) do
-        ll_3 = LinkedNode(3, nil)
-        ll_2 = LinkedNode(2, ll_3)
+        ll_3 = LinkedNode.new(3, nil)
+        ll_2 = LinkedNode.new(2, ll_3)
         ll_3.next_element = ll_2
-        return LinkedNode(1, ll_2)
+        return LinkedNode.new(1, ll_2)
     end
     describe '#list_has_cycle?' do
-        it 'detects cycle' do
+        it 'detects cycle if there is one' do
             expect(list_has_cycle?(cycle_start)).to be(true)
+        end
+
+        it 'does not detect cycle if there is not one' do
             expect(list_has_cycle?(ll_start)).to be(false)
         end
     end
+
+    # Bonus question (optional)
+    # Write a method (and tests for the method) that returns the
+    # length of the cycle if there is one.
 
 
     # Bonus question (optional)
