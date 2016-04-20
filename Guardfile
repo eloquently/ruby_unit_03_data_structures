@@ -25,7 +25,7 @@
 #  * 'just' rspec: 'rspec'
 
 
-guard :rspec, cmd: "bundle exec rspec --colour --format documentation" do
+guard :rspec, cmd: "bundle exec rspec --colour --format documentation --out rspec.log" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

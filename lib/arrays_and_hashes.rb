@@ -3,10 +3,13 @@
 # You may use the custom methods you write to solve the later problems (e.g.
 # use #my_map in your implementation of #my_map)
 
+# Write the tests before you write the method!!
+
 # Look up these functions in the ruby documentation for Array or Enumerable
 # to see what they do
 
 # #each
+# #include?
 # #select
 # #reject
 # #map (aka collect)
