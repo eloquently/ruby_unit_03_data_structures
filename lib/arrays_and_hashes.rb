@@ -9,9 +9,9 @@
 # to see what they do
 
 # #each
+# #include?
 # #select
 # #reject
-# #include?
 # #map (aka collect)
 # #reduce (aka inject)
 # #flatten (do this recursively for an extra challenge :) )
