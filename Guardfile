@@ -25,7 +25,7 @@
 #  * 'just' rspec: 'rspec'
 
 
-guard :rspec, cmd: "echo '######################################################' && echo '######################################################' && echo ' '######################################################' && ' && bundle exec rspec --colour --format documentation" do
+guard :rspec, cmd: "echo '######################################################' && echo '######################################################' && echo ' '######################################################' && bundle exec rspec --colour --format documentation" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 
