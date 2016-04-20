@@ -77,7 +77,7 @@ describe 'Interview Questions' do
     describe '#add_element_to_beginning' do
         it 'adds element to beginning' do
             new_start = add_element_to_beginning(ll_start, 0)
-            expect(list_to_string(new_start)).to eq('123456')
+            expect(list_to_string(new_start)).to eq('012345')
         end
     end
 
