@@ -30,4 +30,18 @@ class Array
             block.call(self[i])
         end
     end
+
+    def my_reduce(start=nil, &block)
+        if start.nil?
+            accumulator = self.first
+            arr = self.drop(1)
+        else
+            arr = self
+        end
+
+        arr.my_each do |el|
+            accumulator = block.call(el, accumulator)
+        end
+        return accumulator
+    end
 end
