@@ -45,7 +45,7 @@ describe 'Interview Questions' do
 
     let(:ll2_start) do
         next_element = nil
-        ['a','b','c','d','e','f','g'].reverse do |i|
+        ['a','b','c','d','e','f','g'].reverse.each do |i|
             next_element = LinkedNode.new(i, next_element)
         end
         return next_element
@@ -112,8 +112,8 @@ describe 'Interview Questions' do
         end
 
         it 'deletes first element from list' do
-            delete_element(ll_start, 0)
-            expect(list_to_string(ll_start)).to eq('2345')
+            new_start = delete_element(ll_start, 0)
+            expect(list_to_string(new_start)).to eq('2345')
         end
     end
 
