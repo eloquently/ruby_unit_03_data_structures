@@ -104,6 +104,10 @@ describe 'Interview Questions' do
     # Write a method that will delete an element at a given position
     # (starting at 0) in the list and return the list
     describe '#delete_element' do
+        it 'returns first element' do
+            expect(delete_element(ll_start, 3).value).to eq(1)
+        end
+
         it 'deletes element from list' do
             delete_element(ll_start, 3)
             expect(list_to_string(ll_start)).to eq('1235')
