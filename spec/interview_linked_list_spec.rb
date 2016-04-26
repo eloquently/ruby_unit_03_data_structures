@@ -62,6 +62,9 @@ describe 'Interview Questions' do
         it 'returns last value' do
             expect(last_element(ll_start).value).to eq(5)
         end
+        it 'returns first value if list has one element' do
+            expect(last_element(LinkedNode.new(1, nil)).value).to eq(1)
+        end
     end
 
     # Write a method that will add a new element to the end of the
