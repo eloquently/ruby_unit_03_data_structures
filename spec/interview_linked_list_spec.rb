@@ -43,6 +43,14 @@ describe 'Interview Questions' do
         return next_element
     end
 
+    let(:ll2_start) do
+        next_element = nil
+        ['a','b','c','d','e','f','g'].reverse do |i|
+            next_element = LinkedNode.new(i, next_element)
+        end
+        return next_element
+    end
+
     # These methods should just be unattached methods in the
     # interview_linked_list.rb file (put them under your linked list)
     # class declaration
@@ -53,6 +61,7 @@ describe 'Interview Questions' do
     describe '#list_to_string' do
         it 'converts list to string' do
             expect(list_to_string(ll_start)).to eq('12345')
+            expect(list_to_string(ll2_start)).to eq('abcdefg')
         end
     end
 
@@ -61,6 +70,7 @@ describe 'Interview Questions' do
     describe '#last_element' do
         it 'returns last value' do
             expect(last_element(ll_start).value).to eq(5)
+            expect(last_element(ll2_start).value).to eq('g')
         end
         it 'returns first value if list has one element' do
             expect(last_element(LinkedNode.new(1, nil)).value).to eq(1)
@@ -74,6 +84,8 @@ describe 'Interview Questions' do
         it 'adds element to end' do
             add_element_to_end(ll_start, 6)
             expect(list_to_string(ll_start)).to eq('123456')
+            add_element_to_end(ll2_start, 'h')
+            expect(list_to_string(ll2_start)).to eq('abcdefgh')
         end
     end
 
@@ -84,15 +96,24 @@ describe 'Interview Questions' do
         it 'adds element to beginning' do
             new_start = add_element_to_beginning(ll_start, 0)
             expect(list_to_string(new_start)).to eq('012345')
+            new_start2 = add_element_to_beginning(ll2_start, 'A')
+            expect(list_to_string(new_start2)).to eq('Aabcdefg')
         end
     end
 
     # Write a method that will delete an element at a given position
     # (starting at 0) in the list and return the list
     describe '#delete_element' do
-        it 'deletes 4th element from list' do
+        it 'deletes element from list' do
             delete_element(ll_start, 3)
             expect(list_to_string(ll_start)).to eq('1235')
+            delete_element(ll2_start, 4)
+            expect(list_to_string(ll2_start)).to eq('abcdfg')
+        end
+
+        it 'deletes first element from list' do
+            delete_element(ll_start, 0)
+            expect(list_to_string(ll_start)).to eq('2345')
         end
     end
 
@@ -104,6 +125,8 @@ describe 'Interview Questions' do
         it 'reverses list' do
             new_start = reverse_list(ll_start)
             expect(list_to_string(new_start)).to eq('54321')
+            new_start2 = reverse_list(ll2_start)
+            expect(list_to_string(new_start2)).to eq('gfedcba')
         end
     end
 
